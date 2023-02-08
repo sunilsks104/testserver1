@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 const tasks = require('./routes/tasks');
 require('dotenv').config();
 const notFound = require('./middleware/not-found');
@@ -10,6 +11,7 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.use(express.static('./public'));
 app.use(express.json());
+app.use(cors());
 
 // routes
 
